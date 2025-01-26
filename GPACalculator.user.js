@@ -1,16 +1,20 @@
 // ==UserScript==
-// @name         广东工业大学教务系统学生学分计算工具
+// @name         乘方教务系统学生学分计算工具
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.8
 // @description  窝工的教务系统的绩点计算工具😆
 // @author       GamerNoTitle
 // @match        https://jxfw.gdut.edu.cn/*
+// @match        https://zhjw.smu.edu.cn/*
 // @grant        GM_addStyle
 // @run-at       document-idle
 // @homepageURL  https://github.com/GDUTMeow/GPACalculator
 // @supportURL   https://github.com/GDUTMeow/GPACalculator/issues
 // @license      GPLv3
 // ==/UserScript==
+
+// 如果这里没有你的教务系统，请自己添加匹配规则
+// 格式按照 @match https://<教务系统域名>/* 填写
 
 /* 功能特性
 ✅ 自动注入计算按钮
@@ -146,7 +150,7 @@
             `✅ 总学分(含免修)：${totalCreditsWithExemption}`,
             `🚩 加权总分(含免修)：${weightedSumWithExemption.toFixed(2)}`,
             `🎉 最终绩点(含免修)：${totalCreditsWithExemption > 0 ? (weightedSumWithExemption / totalCreditsWithExemption).toFixed(2) : 0}`,
-            `=============== v1.7 ================`
+            `=============== v1.8 ================`
         ].join('\n');
 
         // 显示确认对话框并处理结果
