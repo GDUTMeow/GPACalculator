@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         广东工业大学教务系统学生学分计算工具
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @description  窝工的教务系统的绩点计算工具😆 (支持一键复制GitHub链接)
 // @author       GamerNoTitle
 // @match        https://jxfw.gdut.edu.cn/*
@@ -133,6 +133,11 @@
         // 构建结果消息
         const resultMessage = [
             `=========== 学分计算小工具 ============`,
+            `⚠️ 不含免修的是教务系统里面的计算方式`,
+            `⚠️ 含免修的是GDUTDays的计算方式`,
+            `✨ 点击确定复制GitHub链接 ✨`,
+            `📦 https://github.com/GDUTMeow/GPACalculator`,
+            `----------------------------------------------------------`,
             `✅ 总学分(不含免修)：${totalCredits}`,
             `🚩 加权总分(不含免修)：${weightedSum.toFixed(2)}`,
             `🎉 最终绩点(不含免修)：${totalCredits > 0 ? (weightedSum / totalCredits).toFixed(2) : 0}`,
@@ -140,12 +145,7 @@
             `✅ 总学分(含免修)：${totalCreditsWithExemption}`,
             `🚩 加权总分(含免修)：${weightedSumWithExemption.toFixed(2)}`,
             `🎉 最终绩点(含免修)：${totalCreditsWithExemption > 0 ? (weightedSumWithExemption / totalCreditsWithExemption).toFixed(2) : 0}`,
-            `----------------------------------------------------------`,
-            `⚠️ 不含免修的是教务系统里面的计算方式`,
-            `⚠️ 含免修的是GDUTDays的计算方式`,
-            `✨ 点击确定复制GitHub链接 ✨`,
-            `📦 https://github.com/GDUTMeow/GPACalculator`,
-            `=============== v1.5 ================`
+            `=============== v1.6 ================`
         ].join('\n');
 
         // 显示确认对话框并处理结果
