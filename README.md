@@ -8,7 +8,7 @@
 
 ### 从Greasyfork安装
 
-访问[广东工业大学教务系统学生学分计算工具 | Greasyfork](https://greasyfork.org/zh-CN/scripts/524891-广东工业大学教务系统学生学分计算工具)，然后点击安装按钮即可
+访问[乘方教务系统学生学分计算工具 | Greasyfork](https://greasyfork.org/zh-CN/scripts/524891-%E4%B9%98%E6%96%B9%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E5%AD%A6%E7%94%9F%E5%AD%A6%E5%88%86%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%85%B7)，然后点击安装按钮即可
 
 ### 从Github安装
 
