@@ -2,7 +2,7 @@
 // @name         广东工业大学教务系统学生学分计算工具
 // @namespace    http://tampermonkey.net/
 // @version      1.6
-// @description  窝工的教务系统的绩点计算工具😆 (支持一键复制GitHub链接)
+// @description  窝工的教务系统的绩点计算工具😆
 // @author       GamerNoTitle
 // @match        https://jxfw.gdut.edu.cn/*
 // @grant        GM_addStyle
