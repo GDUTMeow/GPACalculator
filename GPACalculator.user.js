@@ -155,8 +155,8 @@ const CONFIG = {
             </div>
             <div class="modal-content">${content}</div>
             <div class="modal-actions">
-                <button class="md-button" onclick="this.closest('.gpa-modal-overlay').remove()">取消</button>
-                <button class="md-button primary" id="confirmCopy">确定复制</button>
+                <button class="md-button" onclick="this.closest('.gpa-modal-overlay').remove()">关闭</button>
+                <button class="md-button primary" id="confirmCopy">复制 Github 仓库链接</button>
             </div>
         `;
 
