@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         乘方教务系统学生学分计算工具
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.0.1
 // @description  乘方教务系统的绩点计算工具😆
 // @author       GamerNoTitle
 // @match        https://jxfw.gdut.edu.cn/*
@@ -14,7 +14,7 @@
 // ==/UserScript==
 
 const CONFIG = {
-    VERSION: '2.0',
+    VERSION: '2.0.1',
     REPO_URL: 'https://github.com/GDUTMeow/GPACalculator'
 };
 
