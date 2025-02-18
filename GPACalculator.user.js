@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         乘方教务系统学生学分计算工具
 // @namespace    http://tampermonkey.net/
-// @version      1.9
+// @version      2.0
 // @description  乘方教务系统的绩点计算工具😆
 // @author       GamerNoTitle
 // @match        https://jxfw.gdut.edu.cn/*
@@ -14,14 +14,13 @@
 // ==/UserScript==
 
 const CONFIG = {
-    VERSION: '1.9',
+    VERSION: '2.0',
     REPO_URL: 'https://github.com/GDUTMeow/GPACalculator'
 };
 
 (function() {
     'use strict';
 
-    // 原始按钮样式保持不变
     GM_addStyle(`
         #calcGPA {
             margin-left: 12px;
@@ -43,7 +42,6 @@ const CONFIG = {
             transform: translateY(0);
         }
 
-        /* 完整保留第一次的Material You模态框样式 */
         :root {
             --md-sys-color-primary: #6750A4;
             --md-sys-color-on-primary: #FFFFFF;
@@ -143,7 +141,6 @@ const CONFIG = {
         }
     `);
 
-    // 保持第一次的模态框创建逻辑
     function createModal(content) {
         const overlay = document.createElement('div');
         overlay.className = 'gpa-modal-overlay';
@@ -180,7 +177,6 @@ const CONFIG = {
         document.body.appendChild(overlay);
     }
 
-    // 保持原始按钮注入逻辑
     function injectButton() {
         if (document.getElementById('calcGPA')) return;
         const toolbar = document.getElementById('tb');
@@ -205,7 +201,6 @@ const CONFIG = {
         targetRow.appendChild(buttonCell);
     }
 
-    // 保持计算逻辑不变
     function calculateGPA() {
         const table = document.querySelector('table.datagrid-btable');
         if (!table) return;
@@ -248,18 +243,18 @@ const CONFIG = {
             `📦 ${CONFIG.REPO_URL}`,
             `----------------------------------------------------------`,
             `✅ 总学分(不含免修)：${totalCredits}`,
-            `🚩 加权总分(不含免修)：${weightedSum.toFixed(2)}`,
-            `🎉 最终绩点(不含免修)：${totalCredits > 0 ? (weightedSum / totalCredits).toFixed(2) : 0}`,
+            `🚩 加权总分(不含免修)：${weightedSum.toFixed(4)}`,
+            `🎉 最终绩点(不含免修)：${totalCredits > 0 ? (weightedSum / totalCredits).toFixed(4) : 0}`,
             `----------------------------------------------------------`,
             `✅ 总学分(含免修)：${totalCreditsWithExemption}`,
-            `🚩 加权总分(含免修)：${weightedSumWithExemption.toFixed(2)}`,
-            `🎉 最终绩点(含免修)：${totalCreditsWithExemption > 0 ? (weightedSumWithExemption / totalCreditsWithExemption).toFixed(2) : 0}`,
+            `🚩 加权总分(含免修)：${weightedSumWithExemption.toFixed(4)}`,
+            `🎉 最终绩点(含免修)：${totalCreditsWithExemption > 0 ? (weightedSumWithExemption / totalCreditsWithExemption).toFixed(4) : 0}`,
         ].join('\n');
 
         createModal(resultMessage);
     }
 
-    // 保持其他工具函数
+    // 其他工具函数
     function copyToClipboard(text) {
         const textarea = document.createElement('textarea');
         textarea.value = text;
@@ -269,7 +264,7 @@ const CONFIG = {
         document.body.removeChild(textarea);
     }
 
-    // 保持观察器逻辑
+    // 观察器逻辑
     let observer;
     function initObserver() {
         if (observer) observer.disconnect();
@@ -277,7 +272,7 @@ const CONFIG = {
         observer.observe(document.body, { childList: true, subtree: true });
     }
 
-    // 保持路由检测
+    // 路由检测
     let lastUrl = location.href;
     setInterval(() => {
         if (location.href !== lastUrl) {
